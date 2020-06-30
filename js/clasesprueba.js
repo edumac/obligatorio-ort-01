@@ -69,17 +69,24 @@ class sistema{
 		});		
 		return numeroOrd;
 	}
+*/
+
 
 	ordenarPorNombre(orden){
 		let nombreOrd = this.titulos.slice();
-		nombreOrd.sort(function comp(primero, segundo)	{
-			if (orden > 0){
-				return primero.responsable - segundo.responsable;
-			}
+		nombreOrd.sort(function (primero, segundo) {
+         if (primero.responsable > segundo.responsable) {
+				return 1;
+         }
+         if (primero.responsable < segundo.responsable) {
+            return -1;
+         }
+         return 0;
 		});		
 		return nombreOrd;
 	}
 	
+/*
 	static compararNumero(primero, segundo){
         return primero.numero - segundo.numero;
     }
