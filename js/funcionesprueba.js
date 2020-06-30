@@ -105,7 +105,7 @@ function compararNombre(){
 		}
 	}
 	let tablaOrdenada = nuestroSistema.ordenarPorNombre(orden);
-	ordenTabla();
+	ordenTabla(tablaOrdenada);
 }
 
 function compararNumero(){
@@ -117,7 +117,7 @@ function compararNumero(){
 		}
 	}
 	let tablaOrdenada1 = nuestroSistema.ordenarNumero(orden1);
-	ordenTabla();
+	ordenTabla(tablaOrdenada1);
 }
 
 function datosTabla(){
@@ -130,17 +130,17 @@ function datosTabla(){
 		let compraNueva = new compra(responsable, descripcion, monto, participantes, estado);
 		nuestroSistema.agregarCompra(compraNueva);
 		document.getElementById("idFormulario2").reset();
-		ordenTabla();
+		ordenTabla(nuestroSistema.titulos);
 		cargarReintegro();
 		checked();
 	}
 }
 
-function ordenTabla() {
+function ordenTabla(informacionTabla) {
 	let tabla = document.getElementById("infoTabla");
 	tabla.innerHTML = "";
 	
-	let informacionTabla = nuestroSistema.titulos;
+	// let informacionTabla = nuestroSistema.titulos;
 
 		
 	for(let elemento of informacionTabla){
@@ -207,7 +207,7 @@ function reintegroCompra(){
 	for(let elemE in nuestroSistema.titulos){
 		if(cualReintegro == nuestroSistema.titulos[elemE].numero){
 			nuestroSistema.titulos[elemE].estado = "reintegrado";
-			ordenTabla();
+			ordenTabla(nuestroSistema.titulos);
 			eliminarCompra();
 		}
 	}
