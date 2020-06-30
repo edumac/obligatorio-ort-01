@@ -1,0 +1,162 @@
+<!--Sol Cardoso y Jimena Ferreiro -->
+
+<!doctype html> 
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Compras compartidas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/estilos.css">
+		<script src="js/clasesprueba.js"></script>
+		<script src="js/funcionesprueba.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script src="js/grafica.js"></script>
+	</head>
+	
+	<body>
+		<a id="idTope"></a>
+		<header>
+			<picture> 
+				<source media = "(min-width:600px)" srcset="img/titulo.jpg">
+				<source media = "(max-width:600px)" srcset = "img/titulo2.jpg"> 
+				<img src="img/titulo.jpg" width="370" height="60" alt="titulo" class="header">
+			</picture>
+		</header>
+		<br>
+		<nav> 
+			<a href="#idPersonas"><img src="img/persona.jpg" width="30" height="30" alt="persona" class="redondeonav"></a>
+			<a href="#idCompras"><img src="img/carrito.jpg" width="30" height="30" alt="carrito" class="redondeonav"></a>
+			<a href="#idConsultas"><img src="img/signopregunta.jpg" width="30" height="30" alt="signopregunta" class="redondeonav"></a>
+			<a href="https://www.instagram.com/" target="_blank"> <img src="img/instagram.jpg" width="30" height="30" alt="instagram" class="redondeonav"></a>
+			<a href="https://www.facebook.com/" target="_blank"> <img src="img/facebook.jpg" width="30" height="30" alt="facebook" class="redondeonav"></a>
+			<a href="https://uy.linkedin.com/" target="_blank"> <img src="img/linkedin.jpg" width="30" height="30" alt="linkedin" class="redondeonav"></a>
+		</nav>
+		<br>
+		<section>
+			<a id="idPersonas"> <h2> Personas </h2></a>
+			<article>
+				<h3> Registro </h3>
+				<form id="idFormulario1">
+				<label for="idNombre"> Nombre: </label>
+				<input type="text" name="nombre" id="idNombre" maxLength="20" placeholder="Nombre" class="redondo" required>
+				<label for="idSeccion"> Secci&oacute;n: </label>
+				<input type="number" name="Secci&oacute;n" id="idSeccion" min="1" max="8" placeholder="seccion" class="redondo">
+				<label for="idMail"> Mail: </label>
+				<input type="email" name="nombre" id="idMail" placeholder="mail" class="redondo" required>
+				<br>
+				<br>
+				<input type="Button" id="idButton1" value="Agregar" class="redondo">
+				</form>
+			</article>
+			<article>
+				<h3> Visualizaci&oacute;n </h3>
+				<ul id="idLista1">
+				</ul>
+			</article>
+			<a href="#idTope"> <img src="img/flecha.jpg" width="30" height="30" alt="flecha1" class="redondeonav"></a>
+		</section>
+		<br>
+		<section>
+			<a id="idCompras"> <h2> Compras </h2></a>
+			<article>
+				<h3> Registro </h3>
+				<form id="idFormulario2">
+				<label for="idHechapor"> Hecha por: </label>
+				<select id="idHechapor" class="estilo">
+				
+				</select>
+		
+				<label for="idDescripcion"> Descripci&oacute;n: </label>
+				<input type="text" name="Descripcion" id="idDescripcion" maxLength="40" placeholder="Descripci&oacute;n" class="redondo" required>
+		
+				<label for="idMonto"> Monto: </label>
+				<input type="number" name="Monto" id="idMonto" class="redondo" required>
+				<br>
+				<br>
+				<label> Corresponde a: </label>
+				<br>
+				<br>
+				<div id="idDiv">
+				</div>
+				<br>
+				<input type="Button" id="idButton2" value="Agregar" class="redondo">
+				</form>
+			</article>
+			<article>
+				<h3> Reintegro </h3>
+				<form id="idFormulario3">
+				<label for="idReintegro"> Se reintegra la compra: </label>
+				<select name="Reintegro" id="idReintegro" class="estilo">
+				</select>
+				<br>
+				<br>
+				<input type="Button" id="idBotonReintegro" value="Reintegro" class="redondo">
+				</form>
+			</article>
+			<article>
+				<h3> Visualizaci&oacute;n </h3>
+				<p>Orden: 
+				<input type="radio" id="idNumero" name="orden" checked=""> n&uacute;mero
+				<input type="radio" id="idNombre2" name="orden"> nombre
+				</p>
+			
+				<table  id="idTabla">
+					<thead>
+						<tr>
+							<th>NUMERO</th>
+							<th>RESPONSABLE</th>
+							<th>DESCRIPCION</th>
+							<th>MONTO</th>
+							<th>PARTICIPANTES</th>
+							<th>ESTADO</th>
+						</tr>
+					</thead>
+					<tbody id="infoTabla">
+					</tbody>
+				</table>
+			</article>
+			<br>
+			<a href="#idTope"> <img src="img/flecha.jpg" width="30" height="30" alt="flecha1" class="redondeonav"></a>
+		</section>
+		<br>
+		<section>
+			<a id="idConsultas"><h2> Consultas </h2> </a>
+			<article>
+				<h3> Pagos/Cobros pendientes por persona </h3>
+				<form id="idFormulario4">
+				<label for="idPersona"> Persona: </label>
+				<select name="Persona" id="idPersona" class="estilo">
+				</select>
+				<input type="Button" id="idBotonConsultarTotales" value="Consultar totales" class="redondo">
+				</form>
+				<br>
+				<p id="idCampoTotales1"> Particip&oacute; en total por <!--$225--> </p>
+				<p id="idCampoTotales2"></p>
+			</article>
+			<article>
+				<h3> Descripci&oacute;n: </h3>
+				<form id="idFormulario5">
+				<label for="idPalabra"> Palabra a buscar: </label>
+				<input type="text" name="Palabra" id="idPalabra" class="redondo" required>
+				<input type="Button" id="idBotonConsultarCompras" value="Consultar compras" class="redondo">
+				</form>
+				<br>
+	
+				<h4> Resultado (se muestra primera coincidencia) </h4>
+				<ul id="idLista2">
+				</ul>
+			</article>
+			<article>
+				<h3> Gr&aacute;fica </h3>
+				<p>Se muestra cantidad de compras totales por rango de a $100 (0-99, 100-199, etc)
+				<input type="Button" id="idBotonGrafica" value="Graficar" class="redondo"></p>
+				<div id="graficaCompras" class="grafica">
+				</div>
+			</article>
+			<a href="#idTope"> <img src="img/flecha.jpg" width="30" height="30" alt="flecha1" class="redondeonav"></a>
+		</section>
+		<footer>
+			<p><strong> Obligatorio de Programaci&oacute;n I - 1er semestre 2020 - Realizado por: Sol Cardoso y Jimena Ferreiro </strong></p>
+		</footer>
+	</body>
+</html>
